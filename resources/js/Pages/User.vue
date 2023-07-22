@@ -89,6 +89,11 @@ export default {
             required: true,
             default: '0'
         },
+        date: {
+            type: String,
+            required: true,
+            default: '0'
+        },
         chart_information : {
             type: Object,
             required: true,
@@ -124,6 +129,7 @@ export default {
     },
     mounted(){
         this.start();
+        console.log(this.date)
     }
 }
 </script>

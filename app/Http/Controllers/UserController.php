@@ -19,7 +19,7 @@ class UserController extends Controller
 
         return Inertia::render("User",[
             'users' => $users,
-            'created_today' => $users->where('created_at', Carbon::now()->format('Y-m-d H:i:s'))->count(),
+            'created_today' => User::whereRaw('DATE(created_at) = ?', [Carbon::today()->toDateString()])->count(),
             'created_this_week' => $users->whereBetween('created_at', [
                 Carbon::now()->startOfWeek(),
                 Carbon::now()->endOfWeek()
