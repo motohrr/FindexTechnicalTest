@@ -14,4 +14,8 @@ class HomepageController extends Controller
             'users' => $users
         ]);
     }
+
+    public function about(){
+        return Inertia::render("About");
+    }
 }

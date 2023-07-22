@@ -1,6 +1,6 @@
 <template>
     <BaseLayout>
-        <VOnboardingWrapper ref="wrapper" :steps="steps" />
+        <VOnboardingWrapper ref="wrapper" :steps="steps" :options="options" />
         <Head title="Usuarios"></Head>
         <div class="w-full flex justify-center items-center p-4" id="stats">
             <Stats :stats="statsObject"/>
@@ -58,10 +58,19 @@ export default {
             }
         ]
 
+        const options = {
+            labels: {
+                previousButton: 'Anterior',
+                nextButton: 'Siguiente',
+                finishButton: 'Finalizar'
+            }
+        }
+
         return {
             wrapper,
             steps,
-            start
+            start,
+            options,
         }
     },
     props:{

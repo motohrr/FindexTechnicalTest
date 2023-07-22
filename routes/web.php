@@ -7,3 +7,4 @@ use Illuminate\Support\Facades\Route;
 /* Public pages */
 Route::get("/", [HomepageController::class, 'index'])->name("homepage");
 Route::get("/users", [UserController::class, 'index'])->name("users");
+Route::get("/about", [HomepageController::class, 'about'])->name("about");
